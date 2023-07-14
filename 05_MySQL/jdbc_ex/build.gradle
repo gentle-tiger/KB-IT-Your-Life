@@ -21,6 +21,11 @@ dependencies {
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    //mongoDB-driver
+    implementation 'org.mongodb:mongodb-driver-sync:5.0.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.11'
+
 }
 
 test {
