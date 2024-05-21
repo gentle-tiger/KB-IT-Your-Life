@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        const body = document.querySelector('body');
+        const header = document.createElement('h1');
+        header.textContent = 'Header - 0';
+        body.appendChild(header);
+
+        let output = '';
+        for (let i = 0; i < 10; i++) {
+          output += `<h1>Header - ${i} </h1>`;
+        }
+        document.body.innerHTML = output;
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

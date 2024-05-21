@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .re {
+        background-color: rgb(red, green, blue);
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const body = document.querySelector('body');
+        let output = '';
+
+        for (let i = 0; i < 256; i++) {
+          output += '<div></div>';
+        }
+        document.body.innerHTML = output;
+
+        let libDiv = document.querySelectorAll('div');
+
+        console.log(libDiv[1]);
+        for (let i = 0; i < libDiv.length; i++) {
+          let div = libDiv[i];
+
+          div.style.height = '2px';
+          div.style.backgroundColor = `rgb(${i},${i},${i})`;
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
