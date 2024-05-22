@@ -17,10 +17,11 @@
         // Vue 객체
         name: 'App',
         data() {
+          // data 함수에서 리턴하는 객체에 대해서만 출력 가능.
           // ES6 메서드 활용
           return model;
         },
-      }).mount('#app');
+      }).mount('#app'); // 어디에 붙일것이냐? 가상 DOM으로 관리됨.
     </script>
   </body>
 </html>
