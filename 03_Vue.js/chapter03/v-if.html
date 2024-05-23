@@ -8,18 +8,21 @@
   </head>
   <body>
     <!-- 양방향 바인딩  -->
+    <!-- 태그 자체를 그릴지 말지 선별한다. (태그 x) -->
     <div id="app">
-      <h1>{{inputText}}</h1>
-      <input type="text" v-model="inputText" />
+      <h1>행운 {{luck}}</h1>
+      <h1 v-if="luck > 8">오늘은 행운의 날! 로또 사자~</h1>
+      <h1 v-else-if="luck > 5">오늘은 운이 좋으시군요</h1>
+      <h1 v-else-if="luck > 2">평균적인 날입니다</h1>
+      <h1 v-else="luck">운은 항상 바로 옆에 있습니다</h1>
     </div>
     <script>
       const vueApp = Vue.createApp({
         data() {
           return {
-            inputText: '',
+            luck: parseInt(Math.random() * 10),
           };
         },
-        methods: {},
       }).mount('#app');
     </script>
   </body>

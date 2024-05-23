@@ -7,19 +7,22 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <!-- 양방향 바인딩  -->
     <div id="app">
-      <h1>{{inputText}}</h1>
-      <input type="text" v-model="inputText" />
+      <h1>랜덤으로 생성된 숫자를 맞춰 보세요!</h1>
+      <h1 v-if="isNaN(inputNum)">숫자를 입력하세요</h1>
+      <h1 v-else-if="randNum > inputNum">Up</h1>
+      <h1 v-else-if="randNum < inputNum">Down</h1>
+      <h1 v-else>정답!</h1>
+      <input type="text" v-model.number="inputNum" />
     </div>
     <script>
-      const vueApp = Vue.createApp({
+      const app = Vue.createApp({
         data() {
           return {
-            inputText: '',
+            inputNum: 0,
+            randNum: parseInt(Math.random() * 10),
           };
         },
-        methods: {},
       }).mount('#app');
     </script>
   </body>

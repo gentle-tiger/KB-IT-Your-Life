@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in arr">{{item}}</li>
+      </ul>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {};
+          arr: [];
+        },
+        created() {
+          // 작동
+          console.log('#### created'); // 콘솔 찍기
+          const tempArr = [];
+          for (let i = 0; i < 10; i++) {
+            // 배열에 값 추가
+            tempArr.push(parseInt(Math.random() * 10));
+          }
+          console.log(tempArr);
+          this.arr = [...tempArr]; // 깊은 복사
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
