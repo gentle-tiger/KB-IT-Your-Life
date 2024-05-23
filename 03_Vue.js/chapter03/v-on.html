@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      img {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <img v-bind:src="imgSrc" alt="penguins" /> -->
+      <img :src="imgSrc" alt="penguins" />
+      <button v-on:click="changeImgSrc">버튼</button>
+    </div>
+    <script>
+      const vueApp = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            imgSrc: './img/Penguins.jpg',
+          };
+        },
+        methods: {
+          changeImgSrc() {
+            this.imgSrc = './img/cat.jpg';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

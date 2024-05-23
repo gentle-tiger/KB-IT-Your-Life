@@ -20,16 +20,10 @@
         },
         watch: {
           x(current, old) {
-            console.log(`## x : ${old} --> ${current}`);
-            var result = Number(current) + Number(this.y);
-            if (isNaN(result)) this.sum = 0;
-            else this.sum = result;
+            return (this.sum = this.num + y);
           },
           y(current, old) {
-            console.log(`## y : ${old} --> ${current}`);
-            var result = Number(this.x) + Number(current);
-            if (isNaN(result)) this.sum = 0;
-            else this.sum = result;
+            return (this.sum = this.num + x);
           },
         },
       }).mount('#app');
