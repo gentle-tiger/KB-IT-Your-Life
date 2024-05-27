@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Event Handling Example</title>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div @contextmenu="ctxStop" style="padding: 20px; border: 1px solid #000">
+        <a href="https://facebook.com" @click="confirmFB">페이스북</a>
+      </div>
+    </div>
+
+    <script>
+      const vm = Vue.createApp({
+        data() {
+          return {};
+        },
+        methods: {
+          // 우클릭 이벤트를 처리하는 메서드
+          ctxStop(event) {
+            event.preventDefault(); // 기본 우클릭 메뉴를 막음
+            alert('우클릭이 방지되었습니다.');
+          },
+          // 좌클릭 이벤트를 처리하는 메서드
+          confirmFB(event) {
+            if (!confirm('페이스북으로 이동할까요?')) {
+              event.preventDefault(); // 기본 클릭 동작을 막음
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

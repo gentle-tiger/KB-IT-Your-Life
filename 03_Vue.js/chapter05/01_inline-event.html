@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #app {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        margin: 20px 0 0 20px;
+        background-color: skyblue;
+      }
+      #content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+      }
+      #count {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      #btns {
+        display: flex;
+        gap: 5px;
+      }
+      button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+      }
+      button:hover {
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="content">
+        <div id="count">{{ count }}</div>
+        <div id="btns">
+          <button
+            @click="count++"
+            @mouseover="hoverIndex = 0"
+            @mouseleave="hoverIndex = -1"
+            :style="{ backgroundColor: hoverIndex === 0 ? 'red' : '' }"
+          >
+            +
+          </button>
+          <button
+            @click="count--"
+            @mouseover="hoverIndex = 1"
+            @mouseleave="hoverIndex = -1"
+            :style="{ backgroundColor: hoverIndex === 1 ? 'green' : '' }"
+          >
+            --
+          </button>
+          <button
+            @click="count = count * 2"
+            @mouseover="hoverIndex = 2"
+            @mouseleave="hoverIndex = -1"
+            :style="{ backgroundColor: hoverIndex === 2 ? 'blue' : '' }"
+          >
+            x
+          </button>
+          <button
+            @click="count = count % 5"
+            @mouseover="hoverIndex = 3"
+            @mouseleave="hoverIndex = -1"
+            :style="{ backgroundColor: hoverIndex === 3 ? 'yellow' : '' }"
+          >
+            %
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const vueApp = Vue.createApp({
+        name: '호우 수업 파이팅',
+        data() {
+          return {
+            count: 0,
+            hoverIndex: -1,
+          };
+        },
+        methods: {
+          setHoverIndex(index) {
+            this.hoverIndex = index;
+          },
+          resetHoverIndex() {
+            this.hoverIndex = -1;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
