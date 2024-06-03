@@ -1,0 +1,42 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "todo": "HTML 공부",
+      "desc": "HTML 공부...",
+      "done": false
+    },
+    {
+      "id": "2",
+      "todo": "CSS 공부",
+      "desc": "CSS 공부...",
+      "done": true
+    },
+    {
+      "id": "3",
+      "todo": "JavaScript 공부",
+      "desc": "JavaScript 공부 하기!!!! ",
+      "done": false
+    },
+    {
+      "id": "4",
+      "todo": "Vue 공부",
+      "desc": "Vue 공부...",
+      "done": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1111",
+      "password": "1111"
+    },
+    {
+      "id": "2222",
+      "password": "2222"
+    },
+    {
+      "id": "jkhh1125",
+      "password": "ghwls1125"
+    }
+  ]
+}
