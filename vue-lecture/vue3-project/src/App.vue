@@ -1,19 +1,23 @@
 <template>
   <div :style="backgroundStyle">
-    <div style="font-size: 30px">{{ name }}</div>
-    <div style="font-size: 30px">{{ greet }}</div>
-    <div style="font-size: 30px">valueReact : {{ valueReact }}</div>
-    <div style="font-size: 30px">valueRef : {{ valueRef }}</div>
+    <h1>Router Ex</h1>
+    <router-link to="/home">Home</router-link>
+    <h2></h2>
+    <router-view></router-view>
+    <div>{{ name }}</div>
+    <div>{{ greet }}</div>
+    <div>valueReact : {{ valueReact }}</div>
+    <div>valueRef : {{ valueRef }}</div>
     <!-- <button style="font-size: 40px" v-on:click="updataName">Click</button> -->
     <button v-on:click="reactClick">valueReact</button>
     <button v-on:click="refClick">valueRef</button>
-    <!-- <div style="font-size: 30px">마우스 위치: x : {{ x }}, y: {{ y }}</div> -->
-    <div v-if="error" style="font-size: 30px">앗! 에러 발생: {{ error.message }}</div>
-    <div v-else-if="data" style="font-size: 30px">
+    <!-- <div >마우스 위치: x : {{ x }}, y: {{ y }}</div> -->
+    <div v-if="error">앗! 에러 발생: {{ error.message }}</div>
+    <div v-else-if="data">
       로드된 데이터:
-      <pre style="font-size: 30px">{{ data }}</pre>
+      <div>data : {{ data }}</div>
     </div>
-    <div v-else style="font-size: 30px">로딩...</div>
+    <div v-else>로딩...</div>
   </div>
 </template>
 
@@ -71,18 +75,21 @@ const valueRef = ref({
   home: '서울 금천구 ',
 });
 
-const reactClick = () => {
-  valueReact.id++;
-  console.log('valueReact : ', valueReact.id);
-  console.log('valueReact : ', valueReact.name);
-  console.log('valueReact : ', valueReact.home);
-};
+// ref와 react 비교
 const refClick = () => {
   valueRef.value.id++;
   console.log('valueRef : ', valueRef.value.id);
   console.log('valueRef : ', valueRef.value.name);
   console.log('valueRef : ', valueRef.value.home);
 };
+
+const reactClick = () => {
+  valueReact.id++;
+  console.log('valueReact : ', valueReact.id);
+  console.log('valueReact : ', valueReact.name);
+  console.log('valueReact : ', valueReact.home);
+};
+
 const greeting = (userName) => {
   return 'Hello ' + userName.value;
 };
@@ -98,8 +105,8 @@ const greet = greeting(name);
 button {
   display: inline-flex;
   gap: 10px;
-  font-size: 50px;
-  margin-left: 30px;
+  font-size: 20px;
+  margin-left: 10px;
   padding: 10px;
 }
 </style>
