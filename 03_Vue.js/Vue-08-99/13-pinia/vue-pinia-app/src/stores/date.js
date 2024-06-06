@@ -1,13 +1,15 @@
-import { ref } from 'vue';
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
+import { ref } from "vue";
 
 // defineStore(스토어명, 상태 및 메서드를 정의하는 함수)
-export const useDateStore = defineStore('date', () => {
-  const date = ref('');
-
+export const useDateStore = defineStore("date", () => {
+  const date = ref("");
   const now = new Date();
   function year() {
+    const now = new Date();
+
     date.value = `${now.getFullYear()}년 입니다.`;
+    console.log(date.value);
   }
   function month() {
     date.value = `${now.getMonth() + 1}월 입니다`;

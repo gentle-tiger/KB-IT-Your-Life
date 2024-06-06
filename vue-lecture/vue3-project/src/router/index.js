@@ -1,10 +1,9 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
-import Home from '@/pages/Home.vue';
-// createRouter()를 통해 router 인스턴스 생성.
-const routes = [{ path: '/home', component: Home }];
+import { createRouter, createWebHistory } from "vue-router";
+import routes from "./routes.js";
 
+// createRouter()를 통해 router 인스턴스 생성.
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 

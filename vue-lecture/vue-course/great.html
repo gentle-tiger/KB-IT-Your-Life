@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Like Button Animation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="like-button">
+      <span class="like-icon">👍</span>
+      <div class="explosion"></div>
+    </div>
+    <script>
+      document.querySelector('.like-button').addEventListener('click', function () {
+        const icon = this.querySelector('.like-icon')
+        const explosion = this.querySelector('.explosion')
+
+        icon.classList.toggle('active')
+
+        if (icon.classList.contains('active')) {
+          explosion.classList.add('active')
+          setTimeout(() => {
+            explosion.classList.remove('active')
+          }, 500) // Duration of the explode animation
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,12 +1,12 @@
-import { createApp } from 'vue';
-import App from './App.vue';
+import router from "@/router/index.js";
+import { createApp } from "vue";
+import App from "./App.vue";
 
 // import router from './router';
 // import routes from './routes';
 // import router from './router';
-import router from '@/router/index.js';
 // use()를 호출하여 router 플러그인 등록
-createApp(App).use(router).mount('#app');
+createApp(App).use(router).mount("#app");
 
 // 위와 동일
 // const app = createApp(App);
