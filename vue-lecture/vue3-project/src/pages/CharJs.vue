@@ -14,21 +14,21 @@
 </template>
 
 <script setup>
-import Chart from 'chart.js/auto'
-import { onMounted, ref, watch } from 'vue'
+import Chart from 'chart.js/auto';
+import { onMounted, ref, watch } from 'vue';
 
-const income = ref(500)
-const expense = ref(300)
-let myChart
+const income = ref(500);
+const expense = ref(300);
+let myChart;
 
 const renderChart = () => {
-  const ctx = document.getElementById('myChart').getContext('2d')
+  const ctx = document.getElementById('myChart').getContext('2d');
   if (myChart) {
-    myChart.data.datasets[0].data = [income.value, expense.value]
+    myChart.data.datasets[0].data = [income.value, expense.value];
     myChart.update({
       duration: 2000, // 애니메이션의 지속 시간 (밀리초)
-      easing: 'easeOutBounce' // 애니메이션의 속도 곡선
-    })
+      easing: 'easeOutBounce', // 애니메이션의 속도 곡선
+    });
   } else {
     myChart = new Chart(ctx, {
       type: 'doughnut',
@@ -38,9 +38,9 @@ const renderChart = () => {
           {
             data: [income.value, expense.value],
             backgroundColor: ['#36A2EB', '#FF6384'],
-            hoverBackgroundColor: ['#36A2EB', '#FF6384']
-          }
-        ]
+            hoverBackgroundColor: ['#36A2EB', '#FF6384'],
+          },
+        ],
       },
       options: {
         responsive: true,
@@ -48,19 +48,19 @@ const renderChart = () => {
         animation: {
           animateScale: true,
           animateRotate: true,
-          duration: 5000
+          duration: 5000,
           // easing: 'easeOutBounce'
-        }
-      }
-    })
+        },
+      },
+    });
   }
-}
+};
 
 onMounted(() => {
-  renderChart()
-})
+  renderChart();
+});
 
-watch([income, expense], renderChart)
+watch([income, expense], renderChart);
 </script>
 
 <style scoped>

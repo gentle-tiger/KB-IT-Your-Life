@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div>좋은 아침입니다!</div>
+    <h1>좋은 아침입니다!</h1>
   </div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
