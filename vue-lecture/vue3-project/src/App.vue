@@ -22,6 +22,7 @@ import NavMenu from "@/NavMenu.vue";
 .headLine {
   background-color: black;
   color: white;
+  border: 1px solid red;
 }
 
 .title {

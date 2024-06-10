@@ -1,27 +1,26 @@
 <template>
-  <div id="app">
+  <div class="cal">
     <Calendar2 />
   </div>
 </template>
 
 <script>
-import Calendar2 from './components/Calendar2.vue';
+import Calendar2 from "./components/Calendar2.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Calendar,
+    Calendar2,
   },
 };
 </script>
 
 <style>
-#app {
+.cal {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

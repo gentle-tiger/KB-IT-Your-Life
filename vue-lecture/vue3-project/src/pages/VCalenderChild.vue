@@ -1,62 +1,42 @@
 <template>
   <div class="container">
-    <v-calendar v-model="selectedDate" is-expanded :attributes="attrs" @dayclick="handleDayClick" />
+    <VDatePicker v-model="date" color="indigo">
+      <template #footer>
+        <div class="w-full px-3 pb-3">
+          <button
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold w-full px-3 py-1 rounded-md"
+            @click="setToday"
+          >
+            Today
+          </button>
+        </div>
+      </template>
+    </VDatePicker>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      selectedDate: new Date(),
-      days: this.generateDays(),
-    };
-  },
-  computed: {
-    attrs() {
-      return this.days.map((day) => ({
-        key: day.date,
-        highlight: {
-          contentStyle: {
-            backgroundColor: day.income > 0 ? 'lightgreen' : day.expense > 0 ? 'lightcoral' : '',
-          },
-          popover: {
-            label: `Income: ${day.income}, Expense: ${day.expense}`,
-          },
-        },
-      }));
-    },
-  },
-  methods: {
-    generateDays() {
-      const days = [];
-      const currentDate = new Date();
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      for (let i = 1; i <= daysInMonth; i++) {
-        days.push({
-          date: new Date(year, month, i).toISOString().split('T')[0],
-          income: 0,
-          expense: 0,
-        });
-      }
-      return days;
-    },
-    handleDayClick(day) {
-      const selectedDay = this.days.find((d) => d.date === day.date);
-      const type = prompt('Enter "income" or "expense":').toLowerCase();
-      if (type === 'income' || type === 'expense') {
-        const amount = parseFloat(prompt(`Enter ${type} amount:`));
-        if (!isNaN(amount)) {
-          selectedDay[type] += amount;
-        }
-      } else {
-        alert('Invalid type. Please enter either "income" or "expense".');
-      }
-    },
-  },
-};
+<script setup>
+import { ref } from 'vue';
+
+// 현재 날짜를 담을 ref
+const date = ref(new Date());
+
+// 'Today' 버튼 클릭 시 오늘 날짜로 설정하는 함수
+function setToday() {
+  date.value = new Date();
+}
+
+// 달력이 마운트된 후에 실행될 로직
+import { onMounted } from 'vue';
+onMounted(() => {
+  console.log('Calendar mounted');
+});
+
+// 달력이 언마운트되기 전에 실행될 로직
+import { onBeforeUnmount } from 'vue';
+onBeforeUnmount(() => {
+  console.log('Calendar will unmount');
+});
 </script>
 
 <style scoped>
