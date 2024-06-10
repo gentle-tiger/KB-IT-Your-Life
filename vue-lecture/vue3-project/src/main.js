@@ -1,12 +1,18 @@
-import router from "@/router/index.js";
-import { createApp } from "vue";
-import App from "./App.vue";
-
+import router from '@/router/index.js';
+import { createApp } from 'vue';
+import App from './App.vue';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import VCalendar from 'v-calendar';
+import 'v-calendar/style.css';
 // import router from './router';
 // import routes from './routes';
 // import router from './router';
 // use()를 호출하여 router 플러그인 등록
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+
+app.use(router);
+app.mount('#app');
+app.use(VCalendar);
 
 // 위와 동일
 // const app = createApp(App);
