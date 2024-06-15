@@ -1,33 +1,37 @@
 <template>
   <div>
     <nav class="componentsAssets">
-      <router-link v-for="link in links" :key="link.to" :to="link.to">{{ link.label }}</router-link>
+      <router-link v-for="link in links" :key="link.to" :to="link.to">{{
+        link.label
+      }}</router-link>
     </nav>
   </div>
 </template>
 
 <script setup>
 const links = [
-  { to: '/home', label: 'Home' },
-  { to: '/errorMsg', label: 'ErrorMsg' },
-  { to: '/charJs', label: 'CharJs' },
-  { to: '/myEvent', label: 'MyEvent' },
-  { to: '/globalStyle', label: 'GlobalStyle' },
-  { to: '/localStyle', label: 'LocalStyle' },
-  { to: '/combinedStyle', label: 'CombinedStyle' },
-  { to: '/reactive', label: 'Reactive' },
-  { to: '/filter', label: 'Filter' },
-  { to: '/modal', label: 'Modal' },
-  { to: '/calender', label: 'Calender' },
-  { to: '/vcalender', label: 'VCalender' },
+  { to: "/home", label: "Home" },
+  { to: "/errorMsg", label: "ErrorMsg" },
+  { to: "/charJs", label: "CharJs" },
+  { to: "/myEvent", label: "MyEvent" },
+  { to: "/globalStyle", label: "GlobalStyle" },
+  { to: "/localStyle", label: "LocalStyle" },
+  { to: "/combinedStyle", label: "CombinedStyle" },
+  { to: "/reactive", label: "Reactive" },
+  { to: "/filter", label: "Filter" },
+  { to: "/modal", label: "Modal" },
+  { to: "/calender", label: "Calender" },
+  { to: "/vcalender", label: "VCalender" },
 
   // DynamicContent 컴포넌트에서 전부 처리
-  { to: '/dynamicContent', label: 'DynamicContent' },
-  { to: '/dynamicContent/welcome', label: 'DC/welcome' },
-  { to: '/dynamicContent/goodbye', label: 'DC/goodbye' },
+  { to: "/dynamicContent", label: "DynamicContent" },
+  { to: "/dynamicContent/welcome", label: "DC/welcome" },
+  { to: "/dynamicContent/goodbye", label: "DC/goodbye" },
+
+  { to: "/login", label: "Login" },
 
   //  /notFound/404는 없는 경로
-  { to: '/notFound/404', label: '404 Not Found' },
+  { to: "/notFound/404", label: "404 Not Found" },
 ];
 </script>
 

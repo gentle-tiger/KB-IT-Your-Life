@@ -1,18 +1,22 @@
-import router from '@/router/index.js';
-import { createApp } from 'vue';
-import App from './App.vue';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import VCalendar from 'v-calendar';
-import 'v-calendar/style.css';
+import router from "@/router/index.js";
+import { createPinia } from "pinia";
+import { createApp } from "vue";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import VCalendar from "v-calendar";
+import "v-calendar/style.css";
+import App from "./App.vue";
 // import router from './router';
 // import routes from './routes';
 // import router from './router';
 // use()를 호출하여 router 플러그인 등록
 const app = createApp(App);
+const pinia = createPinia();
 
 app.use(router);
-app.mount('#app');
+app.use(pinia);
 app.use(VCalendar);
+app.mount("#app");
 
 // 위와 동일
 // const app = createApp(App);
