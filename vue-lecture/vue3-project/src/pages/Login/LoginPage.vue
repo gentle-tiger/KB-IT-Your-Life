@@ -16,7 +16,7 @@ const userPassword = ref("");
 const userId = ref("");
 async function login() {
   try {
-    const url = "http://localhost:3000/user";
+    const url = "http://localhost:3000/user"; // login.json
     const loginRes = await axios.get(url); // 객체 자체를 가져옴
     // console.log(loginRes);
 

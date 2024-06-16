@@ -2,7 +2,7 @@
 import NavMenu from "@/NavMenu.vue";
 </script>
 <template>
-  <div>
+  <div class="body">
     <div class="headLine">
       <h1 class="title">Components Assets</h1>
       <NavMenu />
@@ -12,13 +12,18 @@ import NavMenu from "@/NavMenu.vue";
   </div>
 </template>
 
-<style>
+<style scoped>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+.body {
+  /* 세로 스크롤바 추가 */
+  /* overflow-y: auto;  */
+}
+
 .headLine {
   background-color: black;
   color: white;

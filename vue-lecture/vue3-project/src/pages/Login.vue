@@ -7,16 +7,10 @@
       <router-link to="/login/loginTodo">loginTodo</router-link>
     </nav>
   </div>
-  {{ hello }}
   <router-view></router-view>
 </template>
 
-<script setup>
-import { useLoginStore } from "@/store/login.js";
-import { computed } from "vue";
-const loginStore = useLoginStore();
-const hello = computed(() => loginStore.hello); // hello를 computed로 감싸기
-</script>
+<script setup></script>
 
 <style scoped>
 a {

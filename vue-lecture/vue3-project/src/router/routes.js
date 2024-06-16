@@ -1,3 +1,4 @@
+import AxiosTodoList from "@/pages/AxiosTodoList.vue";
 import Calender from "@/pages/Calender.vue";
 import CharJs from "@/pages/CharJs.vue";
 import CombinedStyle from "@/pages/CombinedStyle.vue";
@@ -7,15 +8,15 @@ import GlobalStyle from "@/pages/GlobalStyle.vue";
 import Home from "@/pages/Home.vue";
 import LocalStyle from "@/pages/LocalStyle.vue";
 import Login from "@/pages/Login.vue";
-import LoginHome from "@/pages/Login/LoginHome.vue";
-import LoginPage from "@/pages/Login/LoginPage.vue";
-import LoginTodo from "@/pages/Login/LoginTodo.vue";
 import Modal from "@/pages/Modal.vue";
 import MyEvent from "@/pages/MyEvent.vue";
 import NotFound from "@/pages/NotFound.vue";
 import Reactive from "@/pages/Reactive.vue";
 import VCalender from "@/pages/VCalendar.vue";
 import DynamicContent from "@/pages/dynamicContent/DynamicContent.vue";
+import LoginHome from "@/pages/login/LoginHome.vue";
+import LoginPage from "@/pages/login/LoginPage.vue";
+import LoginTodo from "@/pages/login/LoginTodo.vue";
 const routes = [
   { path: "/home", component: Home },
   { path: "/errorMsg", component: ErrorMsg },
@@ -39,6 +40,7 @@ const routes = [
     component: LoginTodo,
     meta: { requiresAuth: true },
   }, // login에서도 동적으로 ~
+  { path: "/axiosTodoList", component: AxiosTodoList }, // login에서도 동적으로 ~
   // { path: "/login/LoginHome", component: LoginHome }, // login에서도 동적으로 ~
   { path: "/:pathMatch(.*)*", component: NotFound }, // 맨 아래에 작성
 ];

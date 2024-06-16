@@ -3,9 +3,9 @@
     <h1>데이터 가져오기</h1>
     <form @submit.prevent="fetchData">
       <div>
-        <button @click="setPeriod('daily')">일별</button>
-        <button @click="setPeriod('weekly')">주간별</button>
-        <button @click="setPeriod('monthly')">월별</button>
+        <button class="button" @click="setPeriod('daily')">일별</button>
+        <button class="button" @click="setPeriod('weekly')">주간별</button>
+        <button class="button" @click="setPeriod('monthly')">월별</button>
       </div>
     </form>
     <div v-if="data">
@@ -18,18 +18,18 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { reactive, ref } from "vue";
 
-const period = ref('');
+const period = ref("");
 const data = ref(null);
 
 const setPeriod = (selectedPeriod) => {
   period.value = selectedPeriod;
 };
 const dummyData = reactive({
-  daily: ['지출', '식비(계절밥상)', '국민은행', '20,000원'],
-  weekly: ['지출', '월세(김국자)', '신한은행', '300,000원'],
-  monthly: ['수입', '급여(멀티캠퍼스)', '카카오뱅크', '2,000,000원'],
+  daily: ["지출", "식비(계절밥상)", "국민은행", "20,000원"],
+  weekly: ["지출", "월세(김국자)", "신한은행", "300,000원"],
+  monthly: ["수입", "급여(멀티캠퍼스)", "카카오뱅크", "2,000,000원"],
 });
 const fetchData = async () => {
   if (!period.value) return;
@@ -43,7 +43,7 @@ const fetchData = async () => {
 </script>
 
 <style scoped>
-button {
+.button {
   margin-right: 10px;
   padding: 10px;
   font-size: 16px;

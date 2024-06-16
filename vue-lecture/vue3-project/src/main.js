@@ -16,6 +16,7 @@ const pinia = createPinia();
 app.use(router);
 app.use(pinia);
 app.use(VCalendar);
+
 app.mount("#app");
 
 // 위와 동일

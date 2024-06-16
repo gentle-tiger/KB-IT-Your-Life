@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <button @click="changeModal">모달 열기</button>
+    <button class="button" @click="changeModal">모달 열기</button>
     <!-- isModalVisible은 props로 보냄.  -->
     <ModalComponent :visible="isModalVisible" @close-modal="changeModal">
       <h1>잘 내려가니?</h1>
@@ -35,7 +35,7 @@ function changeModal() {
   justify-content: center;
   align-items: center;
 }
-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,11 +47,11 @@ button {
   background-color: skyblue;
   transition: 0.5s;
 }
-button:hover {
+.button:hover {
   background-color: rgb(85, 85, 241);
   color: white;
 }
-button:active {
+.button:active {
   background-color: rgb(200, 200, 209);
   color: black;
 }
