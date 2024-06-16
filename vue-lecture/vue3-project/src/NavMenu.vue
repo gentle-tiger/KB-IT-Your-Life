@@ -29,6 +29,7 @@ const links = [
   { to: "/dynamicContent/goodbye", label: "DC/goodbye" },
 
   { to: "/login", label: "Login" },
+  // { to: "/login/home", label: "LoginHome" },
 
   //  /notFound/404는 없는 경로
   { to: "/notFound/404", label: "404 Not Found" },

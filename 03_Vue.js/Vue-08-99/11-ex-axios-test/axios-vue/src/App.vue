@@ -13,7 +13,9 @@
 <style scoped>
 .container {
   border: 1px solid red;
+  height: 200px;
   background-color: gray;
+  font-size: 50px;
 }
 nav {
   display: flex;

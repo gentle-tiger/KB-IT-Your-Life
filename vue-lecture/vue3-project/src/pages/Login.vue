@@ -1,17 +1,31 @@
 <template>
   <div>로그인 페이지</div>
-  <router-link to="/login/home">login-home</router-link>
-  <!-- <router-view></router-view> -->
-  <Home />
+  <div>
+    <nav>
+      <router-link to="/login/home">home</router-link>
+      <router-link to="/login/loginPage">loginPage</router-link>
+      <router-link to="/login/loginTodo">loginTodo</router-link>
+    </nav>
+  </div>
+  {{ hello }}
+  <router-view></router-view>
 </template>
 
 <script setup>
-import useLoginStore from "@/store/login.js";
+import { useLoginStore } from "@/store/login.js";
 import { computed } from "vue";
-import Home from "./Login/Home.vue";
-const loginStore = useLoginStore;
-const hello = computed(() => loginStore.hello);
+const loginStore = useLoginStore();
+const hello = computed(() => loginStore.hello); // hello를 computed로 감싸기
 </script>
 
-<style lang="scss" scoped></style>
-\
+<style scoped>
+a {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: lightgray;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 24px !important;
+}
+</style>
