@@ -3,12 +3,7 @@
     <h1>AxiosTodoList</h1>
     <!-- todoList -->
     <div class="add-todo">
-      <input
-        type="text"
-        v-model.trim="todoInput"
-        class="add-input"
-        placeholder="입력해주세요."
-      />
+      <input type="text" v-model.trim="todoInput" class="add-input" placeholder="입력해주세요." />
       <button class="fa-plus-btn" @click="addTodo">
         <i class="fa-solid fa-plus"></i>
       </button>
@@ -21,11 +16,7 @@
             class="todo-item"
             v-if="isState"
             @click="completedTodo(todos.id)"
-            :style="
-              todos.complete
-                ? { textDecoration: 'line-through' }
-                : { textDecoration: 'none' }
-            "
+            :style="todos.complete ? { textDecoration: 'line-through' } : { textDecoration: 'none' }"
           >
             {{ todos.todo }}
           </span>
@@ -34,16 +25,10 @@
           </span>
 
           <button class="icon modify" @click="modefyTodo(todos.id, todos.todo)">
-            <i
-              class="fa-solid fa-eraser"
-              :style="isState ? { color: 'black' } : { color: 'red' }"
-            ></i>
+            <i class="fa-solid fa-eraser" :style="isState ? { color: 'black' } : { color: 'red' }"></i>
           </button>
           <button class="icon delete" @click="deleteTodo(todos.id)">
-            <i
-              class="fa-solid fa-trash"
-              :style="todos.complete ? { color: 'red' } : { color: 'black' }"
-            ></i>
+            <i class="fa-solid fa-trash" :style="todos.complete ? { color: 'red' } : { color: 'black' }"></i>
           </button>
         </li>
       </ol>
@@ -52,10 +37,10 @@
 </template>
 
 <script setup>
-import axios from "axios";
-import { reactive, ref } from "vue";
+import axios from 'axios';
+import { reactive, ref } from 'vue';
 
-const todoInput = ref("");
+const todoInput = ref('');
 const isState = ref(true);
 const state = reactive({
   todoList: [],
@@ -63,21 +48,21 @@ const state = reactive({
 
 // get list
 
-const url = "http://localhost:3000/todos";
+const url = 'http://localhost:3000/todos';
 // const BASEURL = "/api/todos"; // 오류
 
 // todoList 추가
 async function addTodo() {
-  if (todoInput.value === "") return console.log("할 일을 입력해주세요");
+  if (todoInput.value === '') return console.log('할 일을 입력해주세요');
 
   try {
     const Item = { id: new Date(), todo: todoInput.value, done: false };
-    console.log("Item : ", Item);
+    console.log('Item : ', Item);
     await axios.post(url, Item); // await 를 한 후에 이후 코드를 실행해야 제대로 업데이트됨.
-    todoInput.value = "";
+    todoInput.value = '';
     fetchTodoList();
   } catch (error) {
-    console.log("error : ", error);
+    console.log('error : ', error);
   }
 }
 
@@ -85,11 +70,11 @@ async function addTodo() {
 async function deleteTodo(id) {
   try {
     const deleteTodo = `${url}/${id}`;
-    console.log("deleteTodo", deleteTodo);
+    console.log('deleteTodo', deleteTodo);
     await axios.delete(deleteTodo);
     fetchTodoList();
   } catch (error) {
-    console.log("error", error);
+    console.log('error', error);
   }
 }
 
@@ -102,7 +87,7 @@ async function modefyTodo(id, todo) {
     await axios.put(modefyUrl, modefyTodo);
     fetchTodoList();
   } catch (error) {
-    console.log("error", error);
+    console.log('error', error);
   }
   console.log(id);
 }
@@ -121,10 +106,11 @@ async function fetchTodoList() {
   try {
     // const getTodoRes = await axios.get(BASEURL);
     const getTodoRes = await axios.get(url);
+
     state.todoList = getTodoRes.data;
-    console.log("state.todoList : ", state.todoList);
+    console.log('state.todoList : ', state.todoList);
   } catch (error) {
-    console.log("error : ", error);
+    console.log('error : ', error);
   }
 }
 

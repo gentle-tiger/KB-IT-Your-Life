@@ -2,18 +2,23 @@
   "todos": [
     {
       "id": "1",
-      "todo": "민경이랑 놀기",
+      "todo": "놀기",
       "complete": false
     },
     {
       "id": "2",
-      "todo": "민경이랑 영화보기",
+      "todo": "영화보기",
       "complete": false
     },
     {
       "id": "2024-06-16T15:45:47.734Z",
-      "todo": "민경이랑 카페가기2",
+      "todo": "카페가기",
       "complete": false
+    },
+    {
+      "id": "2024-06-17T00:48:28.616Z",
+      "todo": "789",
+      "done": false
     }
   ]
 }

@@ -14,9 +14,9 @@ import NotFound from "@/pages/NotFound.vue";
 import Reactive from "@/pages/Reactive.vue";
 import VCalender from "@/pages/VCalendar.vue";
 import DynamicContent from "@/pages/dynamicContent/DynamicContent.vue";
-import LoginHome from "@/pages/login/LoginHome.vue";
-import LoginPage from "@/pages/login/LoginPage.vue";
-import LoginTodo from "@/pages/login/LoginTodo.vue";
+import LoginHome from "@/pages/Login/LoginHome.vue";
+import LoginPage from "@/pages/Login/LoginPage.vue";
+import LoginTodo from "@/pages/Login/LoginTodo.vue";
 const routes = [
   { path: "/home", component: Home },
   { path: "/errorMsg", component: ErrorMsg },
