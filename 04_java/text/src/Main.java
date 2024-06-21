@@ -1,7 +1,25 @@
+import com.sun.security.jgss.GSSUtil;
+
+import java.io.*;
+import java.util.*;
+
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int N = Integer.parseInt(br.readLine());
 
 
-//        System.out.println("Hello world!");
+        bw.write("N : " + N);
+        bw.newLine();
+        bw.write("valueOf : " + String.valueOf(N));
+
+        bw.flush();
+        bw.close();
+        br.close();
     }
+
 }
