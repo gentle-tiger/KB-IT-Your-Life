@@ -31,6 +31,7 @@ const links = [
   { to: "/login", label: "Login" },
 
   { to: "/axiosTodoList", label: "AxiosTodoList" },
+  { to: "/toyCalender", label: "ToyCalender" },
   //  /notFound/404는 없는 경로
   { to: "/notFound/404", label: "404 Not Found" },
 ];
