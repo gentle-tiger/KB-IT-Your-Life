@@ -1,7 +1,7 @@
 package afternoon.access;
 
 public class BankAccount {
-
+    // 필드
     private int balance;
 
     // public 생성자

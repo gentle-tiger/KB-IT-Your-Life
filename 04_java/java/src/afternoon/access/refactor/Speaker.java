@@ -4,7 +4,7 @@ public class Speaker {
     private int volumne;
 
     // 볼륨 조정값
-    private int volumeAdjust = 1;
+    private int volumneAdjust = 1;
 
     // 볼륨 최댓값, 최솟값
     private int maxVolumne = 100;
@@ -42,7 +42,7 @@ public class Speaker {
     // 볼륨 증가
     public void volumneUp(){
       if(volumneUpEquals()){
-          this.volumne += volumeAdjust;
+          this.volumne += this.volumneAdjust;
       }else{
           System.out.println(volumneUpEqualsText);
       }
@@ -51,23 +51,23 @@ public class Speaker {
     // 볼륨 감소
     public void volumneDown(){
         if(volumneDownEquals()){
-            volumne -= volumeAdjust;
+            this.volumne -= this.volumneAdjust;
         }else{
             System.out.println(volumneDownEqualsText);
         }
     }
     // 볼륨 0
     public void volumneMute (){
-        this.volumne = minVolumne;
+        this.volumne = this.minVolumne;
     }
 
     // 볼륨 비교
     // 99 or 1 일 때 +1, -1을 한 후 함수를 빠져나온다.
     private boolean volumneUpEquals(){
-        return volumne < maxVolumne;
+        return volumne < this.maxVolumne;
     }
     private boolean volumneDownEquals(){
-        return volumne > minVolumne;
+        return volumne > this.minVolumne;
     }
 
 
