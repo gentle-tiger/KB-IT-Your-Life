@@ -20,8 +20,8 @@ const links = [
   { to: "/reactive", label: "Reactive" },
   { to: "/filter", label: "Filter" },
   { to: "/modal", label: "Modal" },
-  { to: "/calender", label: "Calender" },
-  { to: "/vcalender", label: "VCalender" },
+  { to: "/calendar", label: "calendar" },
+  { to: "/vcalendar", label: "VCalendar" },
 
   // DynamicContent 컴포넌트에서 전부 처리
   { to: "/dynamicContent", label: "DynamicContent" },
@@ -31,7 +31,7 @@ const links = [
   { to: "/login", label: "Login" },
 
   { to: "/axiosTodoList", label: "AxiosTodoList" },
-  { to: "/toyCalender", label: "ToyCalender" },
+  { to: "/toyCalendar", label: "ToyCalendar" },
   //  /notFound/404는 없는 경로
   { to: "/notFound/404", label: "404 Not Found" },
 ];

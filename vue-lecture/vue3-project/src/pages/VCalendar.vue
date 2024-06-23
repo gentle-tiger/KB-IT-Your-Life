@@ -1,15 +1,15 @@
 <template>
-  <div class="vCalenderWarpper">
-    <VCalenderChild />
+  <div class="vCalendarWarpper">
+    <VCalendarChild />
   </div>
 </template>
 
 <script setup>
-import VCalenderChild from "@/pages/VCalenderChild.vue";
+import VCalendarChild from "@/pages/VCalendarChild.vue";
 </script>
 
 <style>
-.vCalenderWarpper {
+.vCalendarWarpper {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
