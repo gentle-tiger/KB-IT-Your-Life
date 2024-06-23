@@ -105,7 +105,6 @@ const setToday = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   height: 100%;
 }
 .toyCalendar-controls {
