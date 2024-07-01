@@ -9,7 +9,9 @@ public class AbstractAnimalMain {
         animals[1] = new Cat();
         animals[2] = new Duck();
 
-
+//  static으로  선언한 animalCall 메서드에 매개변수로 객체를 넣어서 실행한다.
+//  animalCall() 메서드는 animal이라는 객체를 매개변수로 받아
+//  해당 객체가 가진 eat(), sound() 메서드를 실행한다.
         for(AbstractAnimal animal : animals){
             animalCall(animal);
         }
