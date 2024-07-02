@@ -1,6 +1,6 @@
 package afternoon.nested.inner.ex2;
 
-// 내부 클래스 
+// 내부 클래스
 public class InnerCar {
     private String model;
     private int oilAmount;
