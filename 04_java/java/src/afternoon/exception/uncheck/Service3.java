@@ -1,5 +1,5 @@
 package afternoon.exception.uncheck;
-
+// 예외 처리 3
 // 빨간줄은 뜨지 않지만 프로그램을 실행하면 에러가 뜬다. trycatch 구문을 통해 에러를 확인한다.
 public class Service3 {
     public static void main(String[] args) {
