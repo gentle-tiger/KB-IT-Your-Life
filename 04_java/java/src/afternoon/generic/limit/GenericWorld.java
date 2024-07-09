@@ -1,6 +1,9 @@
 package afternoon.generic.limit;
-
-public class GenericWorld <T>{
+// 중요~~~~~~~~~~
+// 해당 클래스가 인스턴스될 때 타입이 결정되기 때문에, 생성시점에는 T가 이미 결정되어 있다는 것이다.
+// 눈으로는 결정이 되지 않은 것처럼 보이지만 사실은 인스턴스가 되었을 때,
+// 해당 인스턴스의 타입을 같이 작성하므로 Type은 이미 결정되어 있는 것이다.
+public class GenericWorld <T extends Number>{
     private T value;
 
     public T getNumber() {
@@ -38,6 +41,6 @@ public class GenericWorld <T>{
     }
 
     public double transDouble(){
-        return ((Number) value).doubleValue();
+        return  value.doubleValue();
     }
 }
