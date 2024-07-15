@@ -137,9 +137,19 @@ GROUP BY c.customer_name
 ORDER BY 총액 DESC;
 
 -- 각 물품이 몇 개 팔렸나 
+SELECT * FROM products p 
+INNER JOIN order_details od 
+ON p.product_id = od.product_id; 
 
-
-
+-- 각 물품이 몇 개 팔렸나 (
+SELECT 
+	p.product_name,
+    SUM(od.quantity) AS 총판매수
+FROM products p 
+INNER JOIN order_details od 
+ON p.product_id = od.product_id
+GROUP BY p.product_name
+ORDER BY 총판매수 DESC;
 
 
 
