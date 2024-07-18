@@ -1,4 +1,4 @@
-package org.scoula.user2;
+package org.scoula.example.user2;
 
 public class UserManageProgram {
     public static void main(String[] args) {

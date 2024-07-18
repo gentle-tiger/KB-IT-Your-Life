@@ -1,15 +1,22 @@
-package org.scoula.user;
+package org.scoula.example.user2;
 
-import org.scoula.common.JDBCUtil;
+import org.scoula.example.common.JDBCUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ManageUser {
+// 특정 데이터베이스만을 통신하기 때문에 이렇게 하는 것..?
+// 이렇게가 뭐지.
+public class UserDAO {
 
+    // 정보를 가지고 있다.
+    private final Connection conn;
 
-    public void addUser(User newUser) {
-        Connection conn = JDBCUtil.getConnection();
+    public UserDAO() {
+        this.conn = JDBCUtil.getConnection();
+    }
+
+    public void addUser(UserVO newUser) {
 
         String sql = "INSERT INTO user_table (userid, name, password, age, membership) VALUES (?,?,?,?,?)";
 
@@ -28,36 +35,15 @@ public class ManageUser {
         System.out.println("회원이 성공적으로 추가 되었습니다!");
     }
 
-    public void deleteUserById(int id) {
-        Connection conn = JDBCUtil.getConnection();
-        String sql = "DELETE FROM user_table WHERE id = ?"; // 중요
 
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) { // 고정적으로 작성하는 코드 (중요)
-            pstmt.setInt(1, id); // 첫 번쨰 물음 표의 값을 받는다.
-            int affectedRows = pstmt.executeUpdate(); // executeUpdate() 메서드는 값을 반환한다.
-            // executeUpdate() 메서드
-            // -> INSERT, UPDATE, DELETE 문: 데이터베이스에서 데이터를 삽입, 갱신, 삭제하는 데 사용된다.
-            // -> executeUpdate() 메서드는 SQL 문이 성공적으로 실행된 후 영향을 받은 행(row)의 개수를 int 타입으로 반환한다.
-            // affectedRows()
-            if (affectedRows == 0) {
-                System.out.printf("ID가 %s인 회원이 존재하지 않습니다.", id);
-            } else {
-                System.out.printf("ID가 $s인 회원 정보가 성공적으로 제거 되었습니다.", id);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException();
-        }
-    }
 
     // 회원 목록 조회
     public void getAllUsers() {
-        Connection conn = JDBCUtil.getConnection();
         String sql = "SELECT * FROM user_table";// 중요
         //
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
-            ArrayList<User> users = new ArrayList<>();
+            ArrayList<UserVO> users = new ArrayList<>();
 
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -65,10 +51,10 @@ public class ManageUser {
                 String name = rs.getString("name");
                 String password = rs.getString("password");
                 int age = rs.getInt("age");
-                boolean membership = rs.getBoolean("membetship");
+                boolean membership = rs.getBoolean("membership");
                 Timestamp signup = rs.getTimestamp("signup_date");
 
-                User user = new User(id, userid, name, password, age, membership, signup);
+                UserVO user = new UserVO(id, userid, name, password, age, membership, signup);
 
                 users.add(user);
             }
@@ -83,4 +69,6 @@ public class ManageUser {
             throw new RuntimeException(e);
         }
     }
+
 }
+

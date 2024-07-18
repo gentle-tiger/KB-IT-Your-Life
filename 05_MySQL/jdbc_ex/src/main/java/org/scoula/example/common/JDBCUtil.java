@@ -1,4 +1,4 @@
-package org.scoula.common;
+package org.scoula.example.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

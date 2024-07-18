@@ -1,4 +1,4 @@
-package org.scoula.user;
+package org.scoula.example.user;
 
 import java.sql.Timestamp;
 

@@ -1,9 +1,11 @@
-package org.scoula.user2;
+package org.scoula.example.user2;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Data
@@ -18,8 +20,5 @@ public class UserVO {
     private final int age;
     private final boolean membership;
     private final Timestamp signupDate;
-
-
-
 
 }
