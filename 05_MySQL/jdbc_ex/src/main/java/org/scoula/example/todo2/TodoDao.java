@@ -14,4 +14,5 @@ public interface TodoDao {
     void createTodo(String todo, String user_id);
     void deleteTodo(int id, String user_id);
     void getAllTodosWithUserName();
+
 }
