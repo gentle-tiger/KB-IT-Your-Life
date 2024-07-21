@@ -5,14 +5,13 @@ import lombok.Data;
 
 import java.sql.Timestamp;
 
+// TodoList 데이터를 표현하기 위한 Vo 객체
 @Data
 @AllArgsConstructor
-// TodoVo : TodoList 정보를 관리하는 VO
 public class TodoVo {
     private final int id;
-    private final String userId;
+    private final String user_id;
     private final String todo;
-    private final boolean isCompleted;
+    private final boolean is_completed;
     private final Timestamp created_at;
-
 }
