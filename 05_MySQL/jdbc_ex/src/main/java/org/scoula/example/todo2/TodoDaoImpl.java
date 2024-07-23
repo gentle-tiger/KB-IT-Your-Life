@@ -70,8 +70,10 @@ public class TodoDaoImpl implements TodoDao {
                 }
                 System.out.println("===== " + user_id + " 님의 Todo 전체 목록 =====");
                 // ArrayList 의 길이가 0 이면 작성한 Todo 가 없다는 것이므로 ArrayList 의 크기를 통해 출력 여부 결정
-                if (todos.size() > 0 ) {
+//                if (todos.size() > 0 ) {
+                if (!todos.isEmpty()) {
                     // 롬복이 오버라이딩한 toString 메서드를 실행하여 데이터 출력
+//                    todos.forEach(System.out::println);
                     todos.forEach((todo) -> System.out.println(todo));
                 } else {
                     System.out.println("## 작성하신 Todo 목록이 없습니다!");
