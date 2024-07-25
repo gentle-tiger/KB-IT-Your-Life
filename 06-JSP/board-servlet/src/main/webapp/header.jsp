@@ -5,5 +5,6 @@
           <a href="login">LOGIN</a>
 <!--             tomcat이 처리 -->
           <a href="board">BOARD</a>
+          <a href="setCookie">COOKIE</a>
           <a href="errorMake.jsp">ERROR</a>
       </header>
