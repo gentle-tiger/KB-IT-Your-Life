@@ -23,7 +23,9 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     compileOnly('javax.servlet:javax.servlet-api:4.0.1')
-// MySQL 접속용 라이브러리
+    //jstl
+    implementation 'javax.servlet:jstl:1.2'
+    // MySQL 접속용 라이브러리
     implementation 'com.mysql:mysql-connector-j:8.3.0'
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
