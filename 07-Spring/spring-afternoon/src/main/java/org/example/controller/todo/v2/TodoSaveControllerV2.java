@@ -22,7 +22,7 @@ public class TodoSaveControllerV2 {
 
     @RequestMapping(value = "/todo/v2/form/save", method = RequestMethod.GET)
     public String process(HttpServletRequest req) {
-        log.info("##### todoSaveProcess #####");
+        log.info("##### req /todo/v2/form/save #####");
 
         String todo = req.getParameter("todo");
         todoDtoList.addList(todo);

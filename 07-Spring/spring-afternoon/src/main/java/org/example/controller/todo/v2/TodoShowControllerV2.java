@@ -14,7 +14,7 @@ public class TodoShowControllerV2 {
     // 유일한 객체를 끌어온다
     private TodoDtoListV2 todoDtoList;
 
-    @Autowired
+    @Autowired // 매개변수의 타입을 찾아서 꺼낸다.
     public TodoShowControllerV2(TodoDtoListV2 todoDtoList) {
         this.todoDtoList = todoDtoList;
     }
