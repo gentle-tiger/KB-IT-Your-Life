@@ -2,11 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
   <head>
-    <title>회원 목록</title>
+    <title>회원 목록 v2</title>
   </head>
   <body>
   <%@ include file="header.jsp"%>
-   <h1>회원 목록</h1>
+   <h1>회원 목록v2</h1>
    <ul>
        <li><b>ID - NAME</b></li>
        <c:forEach var="member" items="${memberList}" >
