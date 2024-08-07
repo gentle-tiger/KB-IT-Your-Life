@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.dto.todo.TodoDtoListV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,9 +22,9 @@ public class TodoShowControllerV2 {
 
     // /todo 와 todo는 다른 것. (/todo -> 절대 경로 필수)
     @GetMapping("/todo/v2/show")
-    public String process(HttpServletRequest req) {
+    public String process(Model model) {
         log.info("#### todoShow #### /todo/v2/show");
-        req.setAttribute("todoList", todoDtoList.getList());
+        model.addAttribute("todoList", todoDtoList.getList());
 
         return "todo-show2";
     }
