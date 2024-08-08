@@ -27,6 +27,12 @@
     <a href="/member/v3/show">회원 목록 v3</a>
     <a href="/todo/v3/form">TODO 등록 v3</a>
     <a href="/todo/v3/show">TODO 목록 v3</a>
+    <br>
+    <br>
+    <span><b>V3</b></span>
+    <a href="/">HOME V4</a>
+    <a href="/member/v4/show">회원 목록 v4</a>
+
 </header>
 </body>
 </html>
