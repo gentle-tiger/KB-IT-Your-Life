@@ -5,7 +5,7 @@
     <title>회원 목록 v2</title>
   </head>
   <body>
-  <%@ include file="header.jsp"%>
+  <%@ include file="../header.jsp"%>
    <h1>회원 목록v2</h1>
    <ul>
        <li><b>ID - NAME</b></li>

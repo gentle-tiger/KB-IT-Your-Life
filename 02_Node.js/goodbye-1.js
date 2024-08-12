@@ -7,7 +7,7 @@
 //   let argsString = Array.from(arguments).join(', ');
 
 //   console.log(argsString);
-//   return sum;
+//   return sum;sdf
 // }
 
 // console.log('sum All : ', sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9));
