@@ -20,4 +20,8 @@ public class PostRepository {
     public List<PostDto> findByCondition(String title, String content){
         return postMapper.findByCondition(title, content);
     }
+    // 게시글 삭제
+    public int delete(Long id) {
+        return postMapper.delete(id);
+    }
 }

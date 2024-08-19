@@ -24,7 +24,7 @@ public class ServletConfig implements WebMvcConfigurer {
     public void configureViewResolvers(ViewResolverRegistry registry) {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setViewClass(JstlView.class);
-        bean.setPrefix("/WEB-INF/views/"); // 설정한 파일로...
+        bean.setPrefix("/WEB-INF/views/"); // 설정한 파일로... "/WEB-INF/views/post-show.jsp"을 찾는다.
         bean.setSuffix(".jsp");
         registry.viewResolver(bean);
     }

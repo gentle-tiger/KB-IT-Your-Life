@@ -20,4 +20,8 @@
             </if>
         </where>
     </select>
+    <delete id="delete">
+        delete from posts
+        where id=#{id}
+    </delete>
 </mapper>
