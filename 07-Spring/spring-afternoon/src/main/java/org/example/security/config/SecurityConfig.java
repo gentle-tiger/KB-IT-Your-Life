@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").permitAll()
                 .antMatchers("/security/admin").access("hasRole('ROLE_ADMIN')") // 순서 중요.
                 .antMatchers("/security/**").permitAll()
-                .antMatchers("/**").access("hasRole('ROLE_MEMBER')");
+                .antMatchers("/kakao/**").permitAll() // kakao가 보내는 값을 받을 수 있도록 예외 등록
+                .antMatchers("/**").access("hasAnyRole('ROLE_MEMBER','ROLE_KAKAO')");
 
         // 로그인이 안 되어 있는 상태에서 로그인
         http.formLogin()
